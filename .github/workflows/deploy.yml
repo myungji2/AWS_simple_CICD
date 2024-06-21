@@ -36,7 +36,7 @@ jobs:
           cd ./build/libs
           ls
           mv *AWS_CICD.jar ./app.jar
-          
+          ls
 
       - name: SCP로 EC2에 jar 파일 전송
         uses: appleboy/scp-action@v0.1.7
@@ -44,7 +44,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          source: app.jar
+          source: ./app.jar
           port: 22
           target: /home/ubuntu/project-server/tobe
 
