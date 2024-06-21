@@ -34,8 +34,6 @@ jobs:
       - name: 빌드된 파일 이름 변경하기
         run:
           mv ./build/libs/*AWS_CICD.jar ./app.jar
-          ls
-
 
       - name: SCP로 EC2에 jar 파일 전송
         uses: appleboy/scp-action@v0.1.7
