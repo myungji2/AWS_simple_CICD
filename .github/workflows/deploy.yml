@@ -32,7 +32,7 @@ jobs:
         run: |
           cd ./build/libs
           ls
-          mv *SNAPSHOT.jar ./project.jar
+          mv *AWS_CICD.jar ./project.jar
 
 #      - name: SCP로 EC2에 jar 파일 전송
 #        uses: appleboy/scp-action@v0.1.7
