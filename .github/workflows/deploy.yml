@@ -30,9 +30,9 @@ jobs:
 
       - name: 빌드된 파일 이름 변경하기
         run: |
-          pwd
+          cd ./build/libs
           ls
-          mv ./build/libs/*SNAPSHOT.jar ./project.jar
+          mv *SNAPSHOT.jar ./project.jar
 
 #      - name: SCP로 EC2에 jar 파일 전송
 #        uses: appleboy/scp-action@v0.1.7
