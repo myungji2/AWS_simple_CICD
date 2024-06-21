@@ -22,9 +22,9 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    set('snippetsDir', file("build/generated-snippets"))
-}
+//ext {
+//    set('snippetsDir', file("build/generated-snippets"))
+//}
 
 dependencies {
 
