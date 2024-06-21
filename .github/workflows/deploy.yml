@@ -26,8 +26,7 @@ jobs:
       - name: 빌드하기
         run: |
           chmod +x ./gradlew
-          ./gradlew --version
-          ./gradlew clean build --warning-mode all
+          ./gradlew clean build
           
           
           
@@ -36,16 +35,16 @@ jobs:
         run: |
           cd ./build/libs
           ls
-          mv *AWS_CICD.jar ./project.jar
+          mv *AWS_CICD.jar ./app.jar
 
-#      - name: SCP로 EC2에 jar 파일 전송
-#        uses: appleboy/scp-action@v0.1.7
-#        with:
-#          host: ${{ secrets.EC2_HOST }}
-#          username: ${{ secrets.EC2_USERNAME }}
-#          key: ${{ secrets.EC2_PRIVATE_KEY }}
-#          source: project.jar
-#          target: /home/ubuntu/project-server/tobe
+      - name: SCP로 EC2에 jar 파일 전송
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          source: app.jar
+          target: /home/ubuntu/project-server/tobe
 
 #      - name: SSH로 EC2에 접속하기
 #        uses: appleboy/ssh-action@v1.0.3
