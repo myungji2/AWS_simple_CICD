@@ -19,3 +19,7 @@ jobs:
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
+      - name: secret 변수 사용하기
+        run: |
+          echo ${{ secrets.USERID }}
+          echo ${{ secrets.PASSWORD }}
