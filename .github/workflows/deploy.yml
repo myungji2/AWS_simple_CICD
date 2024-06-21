@@ -36,8 +36,12 @@ jobs:
           cd ./build/libs
           ls
           mv *AWS_CICD.jar ./app.jar
+          
 
       - name: SCP로 EC2에 jar 파일 전송
+        run: |
+          pwd
+          ls
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
